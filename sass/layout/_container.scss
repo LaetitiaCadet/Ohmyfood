@@ -1,3 +1,29 @@
 .container {
     max-width: 830px;
 }
+
+.fonctionnement {
+    padding:20px;
+
+    .list-fonctionnement {
+        li {
+            display: flex;
+            align-items: center;
+            margin: 25px 10px;
+            span{
+                position:relative;
+            }
+            a {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                background:$smoked-white;
+                @include btn-shadow;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+

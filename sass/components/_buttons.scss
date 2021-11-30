@@ -1,3 +1,5 @@
 .btn {
     @include btn;
+    @include btn-shadow;
+    @include gradient-btn(top, $gradient);
 }

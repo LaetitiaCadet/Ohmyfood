@@ -1,0 +1,24 @@
+.fas {
+    position: relative;
+    text-align: center;
+    right: 6px;
+    font-size: larger;
+    padding: 5px 6px;
+    width: 38px;
+}
+
+.list-fonctionnement {
+    li {
+        display: flex;
+        align-items: center;
+        margin: 0 25px;
+        span{
+            position:relative;
+        }
+        a {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
