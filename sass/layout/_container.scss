@@ -4,15 +4,26 @@
 
 .fonctionnement {
     padding:20px;
+    margin-top: 40px;
 
     .list-fonctionnement {
         li {
             display: flex;
             align-items: center;
-            margin: 25px 10px;
-            span{
+            margin: 25px 0px 25px 15px;
+
+            span {
                 position:relative;
+                position: absolute;
+                padding: 3px 10px;
+                right: 0;
+                left: 17px;
+                width: 31px;
+                color: white;
+                background: #9356DC;
+                border-radius: 20px;
             }
+
             a {
                 padding: 20px;
                 display: flex;
@@ -21,6 +32,24 @@
                 background:$smoked-white;
                 @include btn-shadow;
                 border-radius: 20px;
+
+                i {
+
+                    color: grey;
+                    margin-right: 5px;
+                    margin-left: 10px;
+
+                }
+
+                
+            }
+
+            a:hover {
+                background-color: $hover;
+
+                & i{
+                    color:$primary
+                }
             }
         }
     }
