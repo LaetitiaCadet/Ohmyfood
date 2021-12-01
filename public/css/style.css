@@ -20,21 +20,18 @@ a, ul {
   text-decoration: none;
   cursor: pointer;
 }
-a:visited, ul:visited {
-  color: black;
-}
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 300;
   line-height: 1.3;
 }
 
-.header-logo {
+footer header {
   font-family: "Shrikhand", sans-serif;
-  font-weight: 900;
-  font-size: 5rem;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 h1 {
@@ -74,6 +71,23 @@ button {
   width: 38px;
 }
 
+.cards {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 20px #999;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  transition-duration: 0.1s;
+}
+.cards img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+}
+.cards figcaption {
+  padding: 15px;
+}
+
 #header-bloc #header-nav {
   box-shadow: 0px 0px 2px 3px rgba(17, 17, 18, 0.12);
   position: relative;
@@ -100,7 +114,7 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 315px;
+  height: 280px;
 }
 #header-bloc .header-reservation h3 {
   padding: 15px;
@@ -115,7 +129,7 @@ button {
 
 .fonctionnement {
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .fonctionnement .list-fonctionnement li {
   display: flex;
@@ -125,16 +139,17 @@ button {
 .fonctionnement .list-fonctionnement li span {
   position: relative;
   position: absolute;
-  padding: 3px 10px;
+  padding: 3px 9px;
   right: 0;
   left: 17px;
-  width: 31px;
+  width: 28px;
   color: white;
   background: #9356DC;
   border-radius: 20px;
 }
 .fonctionnement .list-fonctionnement li a {
   padding: 20px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   width: 100%;
@@ -152,6 +167,45 @@ button {
 }
 .fonctionnement .list-fonctionnement li a:hover i {
   color: #9356DC;
+}
+.fonctionnement .list-fonctionnement li a:visited {
+  color: black;
+}
+
+.restaurants {
+  padding: 20px;
+}
+.restaurants h3 {
+  margin-bottom: 15px;
+}
+.restaurants figcaption {
+  display: flex;
+  flex-direction: column;
+}
+.restaurants figcaption article {
+  position: absolute;
+  display: flex;
+  justify-content: unset;
+  right: 45px;
+  margin-top: 5px;
+}
+.restaurants figcaption article input[type=checkbox] {
+  display: none;
+}
+.restaurants figcaption article label i i:before {
+  content: "";
+  font-weight: bolder;
+}
+.restaurants figcaption article label i i:after {
+  color: crimson;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+}
+footer a:visited {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
