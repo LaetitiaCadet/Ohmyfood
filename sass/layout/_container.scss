@@ -80,17 +80,48 @@
                 display: none;
             }
             label {
-                i{
-                    & i:before{
-                        content:'';
-                        font-weight: bolder;
 
-                    }
-                    & i:after{
-                        color: crimson;
-                    }
+                .fa-heart::before,
+                .fa-heart::after{
+                   font-family: "Font Awesome 5 Free";
+                   font-weight: 500;
+                   content:"\f004";
                 }
 
+                .fa-heart::before{
+                    color:grey;
+                }
+                
+                .fa-heart::after{
+                    color:crimson
+                }
+
+            }
+
+            input:checked label {
+                &.fa-heart {
+                    &::after {
+                        color: crimson;
+                        animation: pulse 0.5s alternate;
+                    }
+                }
+            }
+
+            @keyframes pulse {
+                0%{
+                    transform: scale(1) ;
+                opacity: 1;
+                }
+                
+                50% {
+                    transform: scale(1.2) ;
+                opacity: 1;
+                }
+                
+                100%{
+                    transform: scale(1);
+                opacity: 1;
+                }
             }
 
 

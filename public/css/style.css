@@ -192,20 +192,53 @@ button {
 .restaurants figcaption article input[type=checkbox] {
   display: none;
 }
-.restaurants figcaption article label i i:before {
-  content: "";
-  font-weight: bolder;
+.restaurants figcaption article label .fa-heart::before,
+.restaurants figcaption article label .fa-heart::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 500;
+  content: "\f004";
 }
-.restaurants figcaption article label i i:after {
+.restaurants figcaption article label .fa-heart::before {
+  color: grey;
+}
+.restaurants figcaption article label .fa-heart::after {
   color: crimson;
+}
+.restaurants figcaption article input:checked label.fa-heart::after {
+  color: crimson;
+  animation: pulse 0.5s alternate;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 footer {
   background-color: #353535;
   color: white;
+  padding: 20px;
+}
+footer header {
+  margin-bottom: 15px;
+}
+footer header h5 {
+  font-weight: 400;
 }
 footer a:visited {
   color: white;
+}
+footer li {
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
