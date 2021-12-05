@@ -34,10 +34,10 @@ footer header {
   font-size: 2rem;
 }
 
-h1 {
+h1, h2 {
   font-family: "Shrikhand", sans-serif;
-  font-weight: 900;
-  font-size: 5rem;
+  font-weight: 600;
+  font-size: 3rem;
 }
 
 button {
@@ -47,6 +47,9 @@ button {
 }
 
 .btn {
+  min-width: 200px;
+  height: 50px;
+  text-align: center;
   padding: 15px 20px;
   margin: 10px;
   color: white;
@@ -73,8 +76,8 @@ button {
 
 .cards {
   background-color: #ffffff;
-  box-shadow: 0px 5px 20px #999;
-  margin-bottom: 25px;
+  box-shadow: 4px 5px 10px #d3d2d2;
+  margin-bottom: 20px;
   border-radius: 15px;
   transition-duration: 0.1s;
 }
@@ -101,6 +104,11 @@ button {
 #header-bloc #header-nav a h1 {
   width: 100%;
   font-size: 0.7em;
+}
+#header-bloc #header-nav a i {
+  position: absolute;
+  left: 15px;
+  top: 14px;
 }
 #header-bloc .header-localisation {
   background: #e1e1e1;
@@ -239,6 +247,77 @@ footer a:visited {
 }
 footer li {
   font-size: 15px;
+}
+
+#main-menu {
+  background: whitesmoke;
+}
+#main-menu .img-presentation {
+  background-image: url("../../public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  z-index: 0;
+}
+#main-menu .list-presentation {
+  padding: 15px;
+  background-color: whitesmoke;
+  position: relative;
+  bottom: 20px;
+  border-radius: 30px;
+  z-index: 1;
+}
+#main-menu .list-presentation .title-presentation {
+  padding: 20px 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main-menu .list-presentation .title-presentation i {
+  font-size: 30px;
+}
+#main-menu .list-presentation .title-categorie p {
+  padding: 10px 0;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+#main-menu .list-presentation .title-categorie p:after {
+  position: absolute;
+  left: 15px;
+  margin-top: 29px;
+  content: "";
+  width: 45px;
+  border-bottom: 3px solid #99E2D0;
+}
+#main-menu .list-presentation .plat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+#main-menu .list-presentation .plat article {
+  display: flex;
+  flex-direction: column;
+}
+#main-menu .list-presentation .plat article h4, #main-menu .list-presentation .plat article p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 300px;
+}
+#main-menu .list-presentation .plat .price {
+  overflow: hidden;
+  position: relative;
+  top: 13px;
+  font-weight: 700;
+}
+#main-menu .commande {
+  position: relative;
+  padding: 15px;
+  bottom: 25px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

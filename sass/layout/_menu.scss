@@ -1,0 +1,82 @@
+#main-menu{
+    background:whitesmoke;
+    
+    .img-presentation{
+        background-image: url('../../public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+        background-size: cover;
+        height: 250px;
+        position: relative;
+        z-index:0;    
+    
+    }
+    
+    .list-presentation{
+        padding: 15px;
+        background-color: whitesmoke;
+        position: relative;
+        bottom: 20px;
+        border-radius: 30px;
+        z-index: 1;
+    
+        .title-presentation{
+            padding:20px 20px 20px 0;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+    
+            i{
+                font-size: 30px;
+            }
+        }
+    
+        .title-categorie p{
+            padding: 10px 0;
+            margin-bottom:15px;
+            font-weight: 500;
+    
+            &:after {
+                position: absolute;
+                left:15px;
+                margin-top:29px;
+                content:'';
+                width: 45px;
+                border-bottom: 3px solid $third;
+            }
+        }
+    
+        .plat {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:15px;
+    
+            article{
+                display: flex;
+                flex-direction: column;
+                
+                & h4, p {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    max-width: 300px;
+                } 
+            }
+            .price{
+                overflow: hidden;
+                position: relative;
+                top: 13px;
+                font-weight: 700;
+            }
+        }
+    }
+    .commande {
+        position: relative;
+        padding: 15px;
+        bottom: 25px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
