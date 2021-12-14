@@ -75,11 +75,26 @@
             display:flex;
             justify-content: space-between;
             align-items: center;
-            padding:15px;
-    
-            article{
+            transition: all 1s ease-out;
+            animation:  slidecard 3s 1;
+
+            @include keyframes (slidecard) {
+                from {
+                    margin-left: 100%;
+                }
+                to{
+                    margin-left: 0%;
+                }
+            }   
+            .titre-plat{
                 display: flex;
                 flex-direction: column;
+                padding:15px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width:100%;
+                
                 
                 & h4, p {
                     text-overflow: ellipsis;
@@ -88,11 +103,37 @@
                     max-width: 260px;
                 } 
             }
+
+            &.plat:hover .confirm-plat{
+                display: flex;
+                transition: all 1s ease-out;
+            }
+
             .price{
                 overflow: hidden;
+                padding: 20px;
                 position: relative;
                 top: 13px;
                 font-weight: 700;
+            }
+
+            .confirm-plat {
+                display: none;
+                background-color:$third;
+                border-radius: 0 10px 10px 0;
+                width: 60px;
+                justify-content: center;
+                align-items: center;
+
+                .confirm-icon{
+                    width: 58px;
+                    height: 67px;
+                    font-size: 27px;
+                    margin: 4px 0px;
+                    padding: 19px;
+                    color: white;
+                }
+
             }
         }
     }

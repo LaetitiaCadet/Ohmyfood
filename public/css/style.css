@@ -87,8 +87,109 @@ button {
   height: 165px;
   object-fit: cover;
 }
+.cards .new {
+  position: absolute;
+  margin-top: 15px;
+  right: 30px;
+  text-align: center;
+  width: 100px;
+  padding: 7px;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #139273;
+  background-color: #99E2D0;
+}
 .cards figcaption {
   padding: 15px;
+}
+
+.like {
+  right: 10px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+.like input[type=checkbox] {
+  display: none;
+}
+.like label i::before {
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.like input[type=checkbox]:checked + label > i:before {
+  color: #9356DC;
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  animation: pulse 0.3s ease-out 1;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.9;
+    font-size: 30px;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    font-size: 35px;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    font-size: 30px;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.9;
+    font-size: 25px;
+    transform: scale(0.8);
+  }
+}
+
+.loading {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: fondue 2.8s 1;
+}
+@keyframes fondue {
+  0%, 60% {
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+  }
+  100% {
+    z-index: -3;
+    background-color: transparent;
+  }
+}
+.loading .spinner {
+  content: " ";
+  position: absolute;
+  top: 300px;
+  left: 40%;
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  z-index: 3;
+  animation: spinner 1.2s linear 2;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+    border: 6px solid #9356DC;
+    border-color: #FF79DA transparent #9356DC transparent;
+  }
+  100% {
+    transform: rotate(360deg);
+    border: 6px solid #9356DC;
+    border-color: #FF79DA transparent #9356DC transparent;
+    opacity: 0.5;
+  }
 }
 
 #header-bloc #header-nav {
@@ -133,6 +234,7 @@ button {
 
 .container {
   max-width: 830px;
+  position: relative;
 }
 
 .fonctionnement {
@@ -188,47 +290,12 @@ button {
 }
 .restaurants figcaption {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 .restaurants figcaption article {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: unset;
-  right: 45px;
-  margin-top: 5px;
-}
-.restaurants figcaption article input[type=checkbox] {
-  display: none;
-}
-.restaurants figcaption article label .fa-heart::before,
-.restaurants figcaption article label .fa-heart::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 500;
-  content: "\f004";
-}
-.restaurants figcaption article label .fa-heart::before {
-  color: grey;
-}
-.restaurants figcaption article label .fa-heart::after {
-  color: crimson;
-}
-.restaurants figcaption article input:checked label.fa-heart::after {
-  color: crimson;
-  animation: pulse 0.5s alternate;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 footer {
@@ -314,23 +381,58 @@ footer li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  transition: all 1s ease-out;
+  animation: slidecard 3s 1;
 }
-#main-menu .list-presentation .plat article {
+@keyframes slidecard {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+#main-menu .list-presentation .plat .titre-plat {
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }
-#main-menu .list-presentation .plat article h4, #main-menu .list-presentation .plat article p {
+#main-menu .list-presentation .plat .titre-plat h4, #main-menu .list-presentation .plat .titre-plat p {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 260px;
 }
+#main-menu .list-presentation .plat.plat:hover .confirm-plat {
+  display: flex;
+  transition: all 1s ease-out;
+}
 #main-menu .list-presentation .plat .price {
   overflow: hidden;
+  padding: 20px;
   position: relative;
   top: 13px;
   font-weight: 700;
+}
+#main-menu .list-presentation .plat .confirm-plat {
+  display: none;
+  background-color: #99E2D0;
+  border-radius: 0 10px 10px 0;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+}
+#main-menu .list-presentation .plat .confirm-plat .confirm-icon {
+  width: 58px;
+  height: 67px;
+  font-size: 27px;
+  margin: 4px 0px;
+  padding: 19px;
+  color: white;
 }
 #main-menu .commande {
   position: relative;

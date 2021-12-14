@@ -1,0 +1,51 @@
+.like{
+    right: 10px;
+    margin-top: 7px;
+    cursor:pointer;
+
+    input[type="checkbox"]{
+       display: none;
+    }
+    
+    label {
+        i::before{
+           font-size: 25px;
+           font-weight: 500;
+           cursor:pointer;
+        }
+    
+    }
+
+    input[type="checkbox"]:checked + label > i:before{
+        color:$primary;
+        background: -webkit-linear-gradient($primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+
+        @include keyframes(pulse){
+            0% {
+                opacity: 0.9;
+                font-size: 30px;
+                transform: scale(0.8);
+            }
+            30% {
+                opacity: 1;
+                font-size: 35px;
+                transform: scale(1);
+              }
+           70%{
+                opacity: 1;
+                font-size: 30px;
+                transform: scale(1)
+            }
+           100%{
+                opacity: 0.9;
+                font-size: 25px;
+                transform: scale(0.8);
+           }
+        }
+        @include animate(pulse, 0.3s, ease-out, 1);
+
+    }
+}
