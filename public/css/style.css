@@ -15,9 +15,16 @@ body {
   background: white;
 }
 
-a, ul {
+ul {
   list-style-type: none;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a, a:visited {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
   cursor: pointer;
 }
 
@@ -34,10 +41,10 @@ footer header {
   font-size: 2rem;
 }
 
-h1 {
+h1, h2 {
   font-family: "Shrikhand", sans-serif;
-  font-weight: 900;
-  font-size: 5rem;
+  font-weight: 600;
+  font-size: 3rem;
 }
 
 button {
@@ -47,6 +54,9 @@ button {
 }
 
 .btn {
+  min-width: 200px;
+  height: 50px;
+  text-align: center;
   padding: 15px 20px;
   margin: 10px;
   color: white;
@@ -61,6 +71,9 @@ button {
 .btn:visited {
   color: white;
 }
+.btn:hover {
+  opacity: 0.5;
+}
 
 .fas {
   position: relative;
@@ -73,8 +86,8 @@ button {
 
 .cards {
   background-color: #ffffff;
-  box-shadow: 0px 5px 20px #999;
-  margin-bottom: 25px;
+  box-shadow: 4px 5px 10px #d3d2d2;
+  margin-bottom: 20px;
   border-radius: 15px;
   transition-duration: 0.1s;
 }
@@ -84,8 +97,109 @@ button {
   height: 165px;
   object-fit: cover;
 }
+.cards .new {
+  position: absolute;
+  margin-top: 15px;
+  right: 30px;
+  text-align: center;
+  width: 100px;
+  padding: 7px;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #139273;
+  background-color: #99E2D0;
+}
 .cards figcaption {
   padding: 15px;
+}
+
+.like {
+  right: 10px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+.like input[type=checkbox] {
+  display: none;
+}
+.like label i::before {
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.like input[type=checkbox]:checked + label > i:before {
+  color: #9356DC;
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  animation: pulse 0.3s ease-out 1;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.9;
+    font-size: 30px;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    font-size: 35px;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    font-size: 30px;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.9;
+    font-size: 25px;
+    transform: scale(0.8);
+  }
+}
+
+.loading {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: fondue 2.8s 1;
+}
+@keyframes fondue {
+  0%, 60% {
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+  }
+  100% {
+    z-index: -3;
+    background-color: transparent;
+  }
+}
+.loading .spinner {
+  content: " ";
+  position: absolute;
+  top: 300px;
+  left: 40%;
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  z-index: 3;
+  animation: spinner 1.2s linear 2;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+    border: 6px solid #9356DC;
+    border-color: #FF79DA transparent #9356DC transparent;
+  }
+  100% {
+    transform: rotate(360deg);
+    border: 6px solid #9356DC;
+    border-color: #FF79DA transparent #9356DC transparent;
+    opacity: 0.5;
+  }
 }
 
 #header-bloc #header-nav {
@@ -102,10 +216,19 @@ button {
   width: 100%;
   font-size: 0.7em;
 }
+#header-bloc #header-nav a i {
+  position: absolute;
+  left: 15px;
+  top: 14px;
+}
 #header-bloc .header-localisation {
   background: #e1e1e1;
   padding: 20px;
   text-align: center;
+}
+#header-bloc .header-localisation i {
+  position: relative;
+  left: 0;
 }
 #header-bloc .header-reservation {
   background: #f5f5f5;
@@ -125,6 +248,7 @@ button {
 
 .container {
   max-width: 830px;
+  position: relative;
 }
 
 .fonctionnement {
@@ -180,47 +304,12 @@ button {
 }
 .restaurants figcaption {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 .restaurants figcaption article {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: unset;
-  right: 45px;
-  margin-top: 5px;
-}
-.restaurants figcaption article input[type=checkbox] {
-  display: none;
-}
-.restaurants figcaption article label .fa-heart::before,
-.restaurants figcaption article label .fa-heart::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 500;
-  content: "\f004";
-}
-.restaurants figcaption article label .fa-heart::before {
-  color: grey;
-}
-.restaurants figcaption article label .fa-heart::after {
-  color: crimson;
-}
-.restaurants figcaption article input:checked label.fa-heart::after {
-  color: crimson;
-  animation: pulse 0.5s alternate;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 footer {
@@ -234,11 +323,161 @@ footer header {
 footer header h5 {
   font-weight: 400;
 }
-footer a:visited {
+footer a, footer a:visited {
   color: white;
 }
 footer li {
   font-size: 15px;
+}
+
+#main-menu {
+  background: whitesmoke;
+}
+#main-menu .img-presentation__1 {
+  background-image: url("../../public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  z-index: 0;
+}
+#main-menu .img-presentation__2 {
+  background-image: url("../../public/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  z-index: 0;
+}
+#main-menu .img-presentation__3 {
+  background-image: url("../../public/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  z-index: 0;
+}
+#main-menu .img-presentation__4 {
+  background-image: url("../../public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-size: cover;
+  height: 250px;
+  position: relative;
+  z-index: 0;
+}
+#main-menu .list-presentation {
+  padding: 15px;
+  background-color: whitesmoke;
+  position: relative;
+  bottom: 20px;
+  border-radius: 30px;
+  z-index: 1;
+}
+#main-menu .list-presentation .title-presentation {
+  padding: 20px 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main-menu .list-presentation .title-presentation .like {
+  font-size: 30px;
+  margin-top: 0;
+}
+#main-menu .list-presentation .title-categorie p {
+  padding: 10px 0;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+#main-menu .list-presentation .title-categorie p:after {
+  position: absolute;
+  left: 15px;
+  margin-top: 29px;
+  content: "";
+  width: 45px;
+  border-bottom: 3px solid #99E2D0;
+}
+#main-menu .list-presentation .plat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slidecard 2s 1;
+}
+@keyframes slidecard {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+#main-menu .list-presentation .plat .titre-plat {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+#main-menu .list-presentation .plat .titre-plat h4, #main-menu .list-presentation .plat .titre-plat p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 260px;
+}
+#main-menu .list-presentation .plat.plat:hover .confirm-plat {
+  position: relative;
+  display: flex;
+  transition: all 1s ease-out;
+  animation: slideconfirm 2s 1;
+}
+@keyframes slideconfirm {
+  from {
+    left: 10%;
+  }
+  to {
+    left: 0%;
+  }
+}
+#main-menu .list-presentation .plat.plat:hover .confirm-plat.confirm-icon {
+  transition: all 1s ease-out;
+  animation: opacityicon 5s 1;
+}
+@keyframes opacityicon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#main-menu .list-presentation .plat .price {
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  top: 13px;
+  font-weight: 700;
+}
+#main-menu .list-presentation .plat .confirm-plat {
+  display: none;
+  background-color: #99E2D0;
+  border-radius: 0 10px 10px 0;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.5s;
+}
+#main-menu .list-presentation .plat .confirm-plat .confirm-icon {
+  width: 58px;
+  height: 67px;
+  font-size: 27px;
+  margin: 4px 0px;
+  padding: 19px;
+  color: white;
+}
+#main-menu .commande {
+  position: relative;
+  padding: 15px;
+  bottom: 25px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

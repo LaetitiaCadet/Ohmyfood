@@ -1,5 +1,6 @@
 .container {
     max-width: 830px;
+    position: relative;
 }
 
 .fonctionnement {
@@ -68,64 +69,12 @@
 
     figcaption{
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
 
         article{
-            position: absolute;
+            position: relative;
             display: flex;
             justify-content: unset;
-            right: 45px;
-            margin-top: 5px;
-            input[type="checkbox"]{
-                display: none;
-            }
-            label {
-
-                .fa-heart::before,
-                .fa-heart::after{
-                   font-family: "Font Awesome 5 Free";
-                   font-weight: 500;
-                   content:"\f004";
-                }
-
-                .fa-heart::before{
-                    color:grey;
-                }
-                
-                .fa-heart::after{
-                    color:crimson
-                }
-
-            }
-
-            input:checked label {
-                &.fa-heart {
-                    &::after {
-                        color: crimson;
-                        animation: pulse 0.5s alternate;
-                    }
-                }
-            }
-
-            @keyframes pulse {
-                0%{
-                    transform: scale(1) ;
-                opacity: 1;
-                }
-                
-                50% {
-                    transform: scale(1.2) ;
-                opacity: 1;
-                }
-                
-                100%{
-                    transform: scale(1);
-                opacity: 1;
-                }
-            }
-
-
-
         }
         
     }

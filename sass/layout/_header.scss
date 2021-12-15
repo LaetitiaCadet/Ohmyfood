@@ -16,12 +16,23 @@
            font-size: 0.7em;
         }
 
+        a i {
+            position: absolute;
+            left: 15px;
+            top: 14px;
+        }
+
     }
 
     .header-localisation {
         background:$dark-grey;
         padding: 20px;
         text-align:center;
+
+        i{
+            position: relative;
+            left: 0;
+        }
     }
 
     .header-reservation {
