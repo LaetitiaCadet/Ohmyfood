@@ -247,7 +247,7 @@ button {
 }
 
 .container {
-  max-width: 830px;
+  max-width: 1440px;
   position: relative;
 }
 
@@ -261,7 +261,6 @@ button {
   margin: 25px 0px 25px 15px;
 }
 .fonctionnement .list-fonctionnement li span {
-  position: relative;
   position: absolute;
   padding: 3px 9px;
   right: 0;
@@ -312,6 +311,34 @@ button {
   justify-content: unset;
 }
 
+@media only screen and (min-width: 992px) {
+  .fonctionnement .list-fonctionnement {
+    display: flex;
+    justify-content: center;
+  }
+  .fonctionnement .list-fonctionnement li {
+    width: 100%;
+    margin: 25px 0px 25px 0px;
+    justify-content: center;
+    position: relative;
+  }
+  .fonctionnement .list-fonctionnement li a {
+    width: 85%;
+  }
+
+  .restaurants .list-restaurant {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .restaurants .list-restaurant .restaurant {
+    width: 45%;
+    margin: 25px 24px;
+  }
+  .restaurants .list-restaurant .restaurant figure {
+    position: relative;
+  }
+}
 footer {
   background-color: #353535;
   color: white;
@@ -330,6 +357,24 @@ footer li {
   font-size: 15px;
 }
 
+@media only screen and (min-width: 992px) {
+  header {
+    text-align: center;
+  }
+  header h5 {
+    font-size: larger;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  ul li {
+    text-align: center;
+    width: 100%;
+  }
+}
 #main-menu {
   background: whitesmoke;
 }

@@ -19,3 +19,23 @@ footer{
         }
 
 }
+
+@media only screen and (min-width: 992px) { 
+    header{
+        text-align: center;
+        
+        h5{
+            font-size: larger;
+        }
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+
+        li{
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
