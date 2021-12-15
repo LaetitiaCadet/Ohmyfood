@@ -51,8 +51,9 @@
             justify-content:space-between;
             align-items: center;
     
-            i{
+            .like{
                 font-size: 30px;
+                margin-top:0;
             }
         }
     
@@ -75,8 +76,7 @@
             display:flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 1s ease-out;
-            animation:  slidecard 3s 1;
+            animation:  slidecard 2s 1;
 
             @include keyframes (slidecard) {
                 from {
@@ -105,9 +105,36 @@
             }
 
             &.plat:hover .confirm-plat{
+                position: relative;
                 display: flex;
                 transition: all 1s ease-out;
+                animation: slideconfirm 2s 1;
+
+                @include keyframes (slideconfirm) {
+                    from {
+                        left: 10%;
+                    }
+                    to{
+                        left: 0%;
+                    }
+                }
+                
+                &.confirm-icon{
+                    transition: all 1s ease-out;
+                    animation:opacityicon 5s 1;
+
+                    @include keyframes (opacityicon) {
+                        from {
+                            opacity: 0;
+                        }
+                        to{
+                            opacity: 1;
+                        }
+                    }
+                }
             }
+
+
 
             .price{
                 overflow: hidden;
@@ -124,6 +151,7 @@
                 width: 60px;
                 justify-content: center;
                 align-items: center;
+                transition-duration: 0.5s;
 
                 .confirm-icon{
                     width: 58px;

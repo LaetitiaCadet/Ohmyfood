@@ -15,9 +15,16 @@ body {
   background: white;
 }
 
-a, ul {
+ul {
   list-style-type: none;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a, a:visited {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
   cursor: pointer;
 }
 
@@ -63,6 +70,9 @@ button {
 }
 .btn:visited {
   color: white;
+}
+.btn:hover {
+  opacity: 0.5;
 }
 
 .fas {
@@ -216,6 +226,10 @@ button {
   padding: 20px;
   text-align: center;
 }
+#header-bloc .header-localisation i {
+  position: relative;
+  left: 0;
+}
 #header-bloc .header-reservation {
   background: #f5f5f5;
   text-align: center;
@@ -309,7 +323,7 @@ footer header {
 footer header h5 {
   font-weight: 400;
 }
-footer a:visited {
+footer a, footer a:visited {
   color: white;
 }
 footer li {
@@ -361,8 +375,9 @@ footer li {
   justify-content: space-between;
   align-items: center;
 }
-#main-menu .list-presentation .title-presentation i {
+#main-menu .list-presentation .title-presentation .like {
   font-size: 30px;
+  margin-top: 0;
 }
 #main-menu .list-presentation .title-categorie p {
   padding: 10px 0;
@@ -381,8 +396,7 @@ footer li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 1s ease-out;
-  animation: slidecard 3s 1;
+  animation: slidecard 2s 1;
 }
 @keyframes slidecard {
   from {
@@ -408,8 +422,30 @@ footer li {
   max-width: 260px;
 }
 #main-menu .list-presentation .plat.plat:hover .confirm-plat {
+  position: relative;
   display: flex;
   transition: all 1s ease-out;
+  animation: slideconfirm 2s 1;
+}
+@keyframes slideconfirm {
+  from {
+    left: 10%;
+  }
+  to {
+    left: 0%;
+  }
+}
+#main-menu .list-presentation .plat.plat:hover .confirm-plat.confirm-icon {
+  transition: all 1s ease-out;
+  animation: opacityicon 5s 1;
+}
+@keyframes opacityicon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 #main-menu .list-presentation .plat .price {
   overflow: hidden;
@@ -425,6 +461,7 @@ footer li {
   width: 60px;
   justify-content: center;
   align-items: center;
+  transition-duration: 0.5s;
 }
 #main-menu .list-presentation .plat .confirm-plat .confirm-icon {
   width: 58px;

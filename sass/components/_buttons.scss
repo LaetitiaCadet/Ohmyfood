@@ -2,4 +2,8 @@
     @include btn;
     @include btn-shadow;
     @include gradient-btn(top, $gradient);
+
+    &:hover{
+        opacity:0.5;
+    }
 }

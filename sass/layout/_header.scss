@@ -28,6 +28,11 @@
         background:$dark-grey;
         padding: 20px;
         text-align:center;
+
+        i{
+            position: relative;
+            left: 0;
+        }
     }
 
     .header-reservation {
