@@ -179,11 +179,11 @@ button {
   content: " ";
   position: absolute;
   top: 300px;
-  left: 40%;
+  right: 45%;
+  left: 42%;
   display: block;
   width: 64px;
   height: 64px;
-  margin: 8px;
   border-radius: 50%;
   z-index: 3;
   animation: spinner 1.2s linear 2;
@@ -202,6 +202,12 @@ button {
   }
 }
 
+@media only screen and (min-width: 992px) {
+  .loading .spinner {
+    right: 43%;
+    left: 47%;
+  }
+}
 #header-bloc #header-nav {
   box-shadow: 0px 0px 2px 3px rgba(17, 17, 18, 0.12);
   position: relative;
@@ -358,19 +364,18 @@ footer li {
 }
 
 @media only screen and (min-width: 992px) {
-  header {
+  footer header {
     text-align: center;
   }
-  header h5 {
+  footer header h5 {
     font-size: larger;
   }
-
-  ul {
+  footer ul {
     display: flex;
     justify-content: center;
     align-items: baseline;
   }
-  ul li {
+  footer ul li {
     text-align: center;
     width: 100%;
   }
@@ -406,7 +411,7 @@ footer li {
   position: relative;
   z-index: 0;
 }
-#main-menu .list-presentation {
+#main-menu .menu-bloc {
   padding: 15px;
   background-color: whitesmoke;
   position: relative;
@@ -414,33 +419,35 @@ footer li {
   border-radius: 30px;
   z-index: 1;
 }
-#main-menu .list-presentation .title-presentation {
+#main-menu .menu-bloc .menu-title {
   padding: 20px 20px 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#main-menu .list-presentation .title-presentation .like {
+#main-menu .menu-bloc .menu-title .like {
   font-size: 30px;
   margin-top: 0;
 }
-#main-menu .list-presentation .title-categorie p {
+#main-menu .menu-bloc .title-categorie p {
+  position: relative;
   padding: 10px 0;
   margin-bottom: 15px;
   font-weight: 500;
 }
-#main-menu .list-presentation .title-categorie p:after {
+#main-menu .menu-bloc .title-categorie p:after {
   position: absolute;
-  left: 15px;
+  left: 1px;
   margin-top: 29px;
   content: "";
   width: 45px;
   border-bottom: 3px solid #99E2D0;
 }
-#main-menu .list-presentation .plat {
+#main-menu .menu-bloc .plat {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 1s;
   animation: slidecard 2s 1;
 }
 @keyframes slidecard {
@@ -451,7 +458,7 @@ footer li {
     margin-left: 0%;
   }
 }
-#main-menu .list-presentation .plat .titre-plat {
+#main-menu .menu-bloc .plat .titre-plat {
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -460,46 +467,36 @@ footer li {
   overflow: hidden;
   width: 100%;
 }
-#main-menu .list-presentation .plat .titre-plat h4, #main-menu .list-presentation .plat .titre-plat p {
+#main-menu .menu-bloc .plat .titre-plat h4, #main-menu .menu-bloc .plat .titre-plat p {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 260px;
 }
-#main-menu .list-presentation .plat.plat:hover .confirm-plat {
+#main-menu .menu-bloc .plat.plat:hover .confirm-plat {
   position: relative;
   display: flex;
-  transition: all 1s ease-out;
-  animation: slideconfirm 2s 1;
+  transition: 1s;
+  animation: slideconfirm 1s 1;
 }
 @keyframes slideconfirm {
   from {
-    left: 10%;
-  }
-  to {
-    left: 0%;
-  }
-}
-#main-menu .list-presentation .plat.plat:hover .confirm-plat.confirm-icon {
-  transition: all 1s ease-out;
-  animation: opacityicon 5s 1;
-}
-@keyframes opacityicon {
-  from {
     opacity: 0;
+    left: 7%;
   }
   to {
     opacity: 1;
+    left: 0%;
   }
 }
-#main-menu .list-presentation .plat .price {
+#main-menu .menu-bloc .plat .price {
   overflow: hidden;
   padding: 20px;
   position: relative;
   top: 13px;
   font-weight: 700;
 }
-#main-menu .list-presentation .plat .confirm-plat {
+#main-menu .menu-bloc .plat .confirm-plat {
   display: none;
   background-color: #99E2D0;
   border-radius: 0 10px 10px 0;
@@ -508,7 +505,7 @@ footer li {
   align-items: center;
   transition-duration: 0.5s;
 }
-#main-menu .list-presentation .plat .confirm-plat .confirm-icon {
+#main-menu .menu-bloc .plat .confirm-plat .confirm-icon {
   width: 58px;
   height: 67px;
   font-size: 27px;
@@ -523,6 +520,21 @@ footer li {
   height: 100px;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .menu-bloc .menu-title {
+    padding: 20px 20px 20px 20px;
+  }
+  .menu-bloc article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .menu-bloc article ul {
+    margin: 10px 25px;
+    width: 45%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
