@@ -1,5 +1,5 @@
 .container {
-    max-width: 830px;
+    max-width: 1440px;
     position: relative;
 }
 
@@ -14,7 +14,6 @@
             margin: 25px 0px 25px 15px;
 
             span {
-                position:relative;
                 position: absolute;
                 padding: 3px 9px;
                 right: 0;
@@ -40,7 +39,6 @@
                     color: grey;
                     margin-right: 5px;
                     margin-left: 10px;
-
                 }
                 
             }
@@ -80,4 +78,42 @@
     }
 }
 
+
+@media only screen and (min-width: 992px) { 
+
+    .fonctionnement{
+        .list-fonctionnement {
+            display: flex;
+            justify-content: center;
+            li {
+                width: 100%;
+                margin: 25px 0px 25px 0px;
+                justify-content: center;
+                position: relative;
+
+                a {
+                    width: 85%;
+                }
+            }
+
+        }
+    }
+
+    .restaurants{
+        .list-restaurant{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .restaurant{
+                width: 45%;
+                margin:25px 24px;
+
+                figure{
+                    position: relative;
+                }
+            }
+        }
+    }
+}
 

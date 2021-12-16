@@ -37,7 +37,7 @@
     
     }
     
-    .list-presentation{
+    .menu-bloc{
         padding: 15px;
         background-color: whitesmoke;
         position: relative;
@@ -45,7 +45,7 @@
         border-radius: 30px;
         z-index: 1;
     
-        .title-presentation{
+        .menu-title{
             padding:20px 20px 20px 0;
             display:flex;
             justify-content:space-between;
@@ -56,15 +56,17 @@
                 margin-top:0;
             }
         }
-    
+        
+        
         .title-categorie p{
+            position: relative;
             padding: 10px 0;
             margin-bottom:15px;
             font-weight: 500;
     
             &:after {
                 position: absolute;
-                left:15px;
+                left:1px;
                 margin-top:29px;
                 content:'';
                 width: 45px;
@@ -76,6 +78,7 @@
             display:flex;
             justify-content: space-between;
             align-items: center;
+            transition: 1s;
             animation:  slidecard 2s 1;
 
             @include keyframes (slidecard) {
@@ -107,34 +110,21 @@
             &.plat:hover .confirm-plat{
                 position: relative;
                 display: flex;
-                transition: all 1s ease-out;
-                animation: slideconfirm 2s 1;
+                transition: 1s;
+                animation: slideconfirm 1s 1;
 
                 @include keyframes (slideconfirm) {
                     from {
-                        left: 10%;
+                        opacity:0;
+                        left: 7%;
                     }
                     to{
+                        opacity:1;
                         left: 0%;
                     }
                 }
                 
-                &.confirm-icon{
-                    transition: all 1s ease-out;
-                    animation:opacityicon 5s 1;
-
-                    @include keyframes (opacityicon) {
-                        from {
-                            opacity: 0;
-                        }
-                        to{
-                            opacity: 1;
-                        }
-                    }
-                }
             }
-
-
 
             .price{
                 overflow: hidden;
@@ -173,6 +163,29 @@
         display: flex;
         justify-content: center;
     }
+
+}
+
+@media only screen and (min-width: 992px) { 
+    .menu-bloc{
+
+        .menu-title {
+            padding: 20px 20px 20px 20px;
+        }
+        article{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            ul {
+                margin: 10px 25px;
+                width: 45%;
+        
+            }
+        }
+
+    }
+
 
 }
 
