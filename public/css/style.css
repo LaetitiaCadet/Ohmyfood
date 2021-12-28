@@ -63,10 +63,10 @@ button {
   border-radius: 35px;
   font-weight: 400;
   box-shadow: 2px 3px 5px 3px rgba(17, 17, 18, 0.12);
-  background: -webkit-linear-gradient(top, #FF79DA 10%, #9356DC 100%, #9356DC);
-  background: -moz-linear-gradient(top, #FF79DA 10%, #9356DC 100%, #9356DC);
-  background: -o-linear-gradient(top, #FF79DA 10%, #9356DC 100%, #9356DC);
-  background: linear-gradient(top, #FF79DA 10%, #9356DC 100%, #9356DC);
+  background: -webkit-linear-gradient(to top, #FF79DA 10%, #9356DC 100%, #9356DC);
+  background: -moz-linear-gradient(to top, #FF79DA 10%, #9356DC 100%, #9356DC);
+  background: -o-linear-gradient(to top, #FF79DA 10%, #9356DC 100%, #9356DC);
+  background: linear-gradient(to top, #FF79DA 10%, #9356DC 100%, #9356DC);
 }
 .btn:visited {
   color: white;
