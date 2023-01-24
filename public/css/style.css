@@ -180,7 +180,7 @@ button {
   position: absolute;
   top: 300px;
   right: 45%;
-  left: 42%;
+  left: 44%;
   display: block;
   width: 64px;
   height: 64px;
@@ -228,7 +228,7 @@ button {
   top: 14px;
 }
 #header-bloc .header-localisation {
-  background: #e1e1e1;
+  background: rgb(225, 225, 225);
   padding: 20px;
   text-align: center;
 }
@@ -254,6 +254,7 @@ button {
 
 .container {
   max-width: 1440px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -331,7 +332,6 @@ button {
   .fonctionnement .list-fonctionnement li a {
     width: 85%;
   }
-
   .restaurants .list-restaurant {
     display: flex;
     justify-content: center;
